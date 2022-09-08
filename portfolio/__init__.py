@@ -1,9 +1,9 @@
 from flask import Flask, render_template, abort
 
-app = Flask(__name__)
+
 
 def create_app():
-
+    app = Flask(__name__)
     projects = [
         {
             "name": "Habit tracking app with Python and MongoDB",
@@ -54,4 +54,5 @@ def create_app():
     @app.errorhandler(404)
     def page_not_found(error):
         return render_template("404.html"), 404
+        
     return app
