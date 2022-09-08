@@ -231,8 +231,7 @@ body {
     display: flex;
     width: 150px;
     height: 150px;
-    margin-left: auto;
-    margin-right: auto;
+    justify-content: center;
 }
 
 .u-bare-link{
