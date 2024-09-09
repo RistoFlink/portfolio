@@ -1,2 +1,6 @@
 .venv
 __pycache__
+.DS_Store
+.idea/
+portfolio/.DS_Store
+portfolio/static/.DS_Store

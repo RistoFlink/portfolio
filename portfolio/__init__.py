@@ -1,7 +1,6 @@
 from flask import Flask, render_template, abort
 
 
-
 def create_app():
     app = Flask(__name__)
     projects = [
@@ -11,7 +10,7 @@ def create_app():
             "hero": "img/habit-tracker-code.png",
             "categories": ["python", "web", "mongodb"],
             "slug": "habit-tracking",
-            "prod": "https://rflink-habit-tracker.herokuapp.com"
+            "prod": "https://habit-tracker-flask.up.railway.app"
         },
         {
             "name": "Microblog with Python and MongoDB",
@@ -19,7 +18,15 @@ def create_app():
             "hero": "img/microblog.png",
             "categories": ["python", "web", "mongodb"],
             "slug": "microblog",
-            "prod": "https://rflink-microblog-app.herokuapp.com"
+            "prod": "https://python-microblog-production.up.railway.app/"
+        },
+        {
+            "name": "Task list with Go, React and MongoDB",
+            "thumb": "img/habit-tracking.png",
+            "hero": "img/tasklist.png",
+            "categories": ["go", "react", "mongodb"],
+            "slug": "task-list",
+            "prod": "https://go-tasks-production.up.railway.app/"
         },
         {
             "name": "Expanding an online store into the Estonian market",
@@ -28,14 +35,14 @@ def create_app():
             "categories": ["writing"],
             "slug": "thesis",
             "prod": "https://urn.fi/URN:NBN:fi:amk-2020100721092"
-        }
+        },
     ]
 
     slug_to_project = {project["slug"]: project for project in projects}
 
     @app.route("/")
     def home():
-        return render_template("home.html", projects = projects)
+        return render_template("home.html", projects=projects)
 
     @app.route("/about")
     def about():
@@ -49,10 +56,10 @@ def create_app():
     def project(slug):
         if slug not in slug_to_project:
             abort(404)
-        return render_template(f"project_{slug}.html", project = slug_to_project[slug])
+        return render_template(f"project_{slug}.html", project=slug_to_project[slug])
 
     @app.errorhandler(404)
     def page_not_found(error):
         return render_template("404.html"), 404
-        
+
     return app
