@@ -5,6 +5,14 @@ def create_app():
     app = Flask(__name__)
     projects = [
         {
+            "name": "Book recommendation with Python, LangChain, and Gradio",
+            "thumb": "img/habit-tracking.png",
+            "hero": "img/book-recommender.png",
+            "categories": ["python", "llm", "openai"],
+            "slug": "book-recommender",
+            "prod": "https://book-recommender-rf.up.railway.app"
+        },
+        {
             "name": "Habit tracking app with Python and MongoDB",
             "thumb": "img/habit-tracking.png",
             "hero": "img/habit-tracker-code.png",
