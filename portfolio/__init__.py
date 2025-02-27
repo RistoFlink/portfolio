@@ -5,7 +5,7 @@ def create_app():
     app = Flask(__name__)
     projects = [
         {
-            "name": "Microservices with Go, Docker, gRPC , and RabbitMQ",
+            "name": "Microservices with Go, Docker, gRPC, and RabbitMQ",
             "thumb": "img/habit-tracking.png",
             "hero": "img/microservices-go.png",
             "categories": ["go", "rabbitmq", "grpc"],
